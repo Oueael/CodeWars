@@ -1,0 +1,39 @@
+Your job is to write a function which increments a string, to create a new string.
+
+    If the string already ends with a number, the number should be incremented by 1.
+    If the string does not end with a number. the number 1 should be appended to the new string.
+
+Examples:
+
+foo -> foo1
+
+foobar23 -> foobar24
+
+foo0042 -> foo0043
+
+foo9 -> foo10
+
+foo099 -> foo100
+
+Attention: If the number has leading zeros the amount of digits should be considered.
+
+function incrementString(str) {
+  // Use a regular expression to find the trailing number part of the string
+  const match = str.match(/(\d+)$/);
+
+  // If there is no number at the end of the string, simply add "1" to it
+  if (!match) return str + "1";
+
+  // Extract the number part and the preceding text
+  const numberPart = match[0];
+  const textPart = str.slice(0, -numberPart.length);
+
+  // Increment the number part. Note: '+' converts the string to a number
+  const incrementedNumber = parseInt(numberPart, 10) + 1;
+
+  // Calculate how many leading zeros are needed, ensuring it's not negative
+  const leadingZeros = Math.max(0, numberPart.length - incrementedNumber.toString().length);
+
+  // Reconstruct the string with the incremented number, preserving leading zeros
+  return textPart + '0'.repeat(leadingZeros) + incrementedNumber;
+}
