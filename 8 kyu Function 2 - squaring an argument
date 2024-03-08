@@ -1,0 +1,21 @@
+
+8 kyu
+Function 2 - squaring an argument
+1843987% of 4,72227,040 of 69,015ineiti3 Issues Reported
+
+    JavaScript
+    Node v18.x
+
+        VIM
+        EMACS
+
+Instructions
+Output
+
+Now you have to write a function that takes an argument and returns the square of it.
+
+function square(n){
+  return n**2
+}
+==============
+const square = (n) => n * n;
