@@ -40,7 +40,7 @@ function isValid(formula){
   if (materials.has(5) !== materials.has(6)){
     return false
   }
-  if (!materials.has(7) && !materials.has(9)){
+  if (!materials.has(7) && !materials.has(8)){
     return false
   }
   return true
