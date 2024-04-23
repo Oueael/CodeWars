@@ -1,0 +1,31 @@
+Description:
+
+Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
+Examples
+
+replace("Hi!") === "H!!"
+replace("!Hi! Hi!") === "!H!! H!!"
+replace("aeiou") === "!!!!!"
+replace("ABCDE") === "!BCD!"
+
+
+function replace(s){
+  const vowels = "aeiouAEIOU"
+  
+  let characters = s.split('')
+  
+  let replaced = characters.map(char =>{
+    if (vowels.includes(char)){
+      return "!"
+    }else {
+      return char
+    }
+  }) 
+  return replaced.join('')
+}
+==============================
+function replace(s){
+  return s.replace(/[aeiouAEIOU]/g,"!")
+}
+
+
